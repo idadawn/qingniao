@@ -1,8 +1,9 @@
 {
   "manifest_version": 3,
-  "name": "青鸟 - 书签同步助手",
+  "name": "__MSG_extensionName__",
   "version": "1.0.0",
-  "description": "将浏览器书签与飞书多维表格双向同步，让你的知识永远触手可及。",
+  "description": "__MSG_extensionDescription__",
+  "default_locale": "zh_CN",
   "permissions": [
     "bookmarks",
     "storage",

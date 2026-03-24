@@ -1,0 +1,8 @@
+{
+  "extensionName": {
+    "message": "Qingniao - Bookmark Sync"
+  },
+  "extensionDescription": {
+    "message": "Two-way sync between your browser bookmarks and a Lark (Feishu) spreadsheet."
+  }
+}

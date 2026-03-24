@@ -1,0 +1,36 @@
+name: Release
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 读取版本号
+        id: version
+        run: echo "version=$(jq -r .version src/manifest.json)" >> $GITHUB_OUTPUT
+
+      - name: 打包扩展
+        run: zip -r qingniao-${{ steps.version.outputs.version }}.zip src/
+
+      - name: 删除旧的 latest release
+        run: gh release delete latest --yes --cleanup-tag 2>/dev/null || true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 发布 Release
+        run: |
+          gh release create latest \
+            --title "青鸟 v${{ steps.version.outputs.version }}" \
+            --notes "基于 commit ${{ github.sha }} 自动构建" \
+            --prerelease \
+            qingniao-${{ steps.version.outputs.version }}.zip
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

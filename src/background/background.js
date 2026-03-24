@@ -194,8 +194,8 @@ async function doBackgroundSync() {
       await chrome.notifications.create(`sync-success-${Date.now()}`, {
         type: 'basic',
         iconUrl: chrome.runtime.getURL('assets/icons/icon48.png'),
-        title: '青鸟 - 同步完成',
-        message: `新增 ${result.added} 条，更新 ${result.updated} 条书签`,
+        title: chrome.i18n.getMessage('notifySyncCompleteTitle'),
+        message: chrome.i18n.getMessage('notifySyncCompleteBody', [result.added.toString(), result.updated.toString()]),
       });
       console.log('[青鸟] 成功通知已发送');
     } catch (notifyErr) {
@@ -217,8 +217,8 @@ async function doBackgroundSync() {
       await chrome.notifications.create(`sync-error-${Date.now()}`, {
         type: 'basic',
         iconUrl: chrome.runtime.getURL('assets/icons/icon48.png'),
-        title: '青鸟 - 同步失败',
-        message: err.message || '请检查飞书配置',
+        title: chrome.i18n.getMessage('notifySyncErrorTitle'),
+        message: err.message || chrome.i18n.getMessage('notifySyncErrorBody'),
       });
       console.log('[青鸟] 失败通知已发送');
     } catch (notifyErr) {

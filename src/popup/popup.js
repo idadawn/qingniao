@@ -3,7 +3,7 @@
  * 管理 Popup 界面的状态切换和用户交互
  */
 
-
+import { initI18n, t } from '../utils/i18n.js';
 import { getAllBookmarks } from '../utils/bookmarks.js';
 import { getValidUserToken, parseFeishuTableUrl, listRecords } from '../utils/feishu.js';
 
@@ -25,6 +25,9 @@ function showView(name) {
 // ─── 初始化 ───────────────────────────────────────────────────────────────────
 
 async function init() {
+  // 初始化 i18n
+  initI18n();
+
   const config = await chrome.storage.local.get([
     'appId', 'appSecret', 'tableUrl', 'lastSyncTime', 'refreshToken',
     'syncStatus', 'syncResult', 'syncError'
@@ -45,8 +48,10 @@ async function init() {
   
   if (config.syncStatus === 'completed' && config.syncResult) {
     // 显示上次同步结果
-    document.getElementById('done-added').textContent = `新增 ${config.syncResult.added} 条`;
-    document.getElementById('done-updated').textContent = `更新 ${config.syncResult.updated} 条`;
+    document.getElementById('done-added').textContent = 
+      t('popupAddedX', config.syncResult.added.toString());
+    document.getElementById('done-updated').textContent = 
+      t('popupUpdatedX', config.syncResult.updated.toString());
     showView('done');
     // 清理状态
     await chrome.storage.local.remove(['syncStatus', 'syncResult']);
@@ -87,7 +92,7 @@ async function init() {
   if (config.lastSyncTime) {
     const date = new Date(config.lastSyncTime);
     document.getElementById('last-sync-time').textContent =
-      `上次同步：${formatTime(date)}`;
+      t('popupLastSync', formatTime(date));
   }
 }
 
@@ -110,22 +115,24 @@ document.getElementById('btn-sync').addEventListener('click', async () => {
     const response = await chrome.runtime.sendMessage({ type: 'SYNC_BOOKMARKS' });
     
     if (!response || !response.started) {
-      throw new Error('同步启动失败');
+      throw new Error(t('popupSyncStartFailed'));
     }
     
     // 等待同步完成，轮询检查状态
     const checkResult = await waitForSyncComplete(30000); // 最多等待30秒
     
     if (checkResult.success) {
-      document.getElementById('done-added').textContent = `新增 ${checkResult.result.added} 条`;
-      document.getElementById('done-updated').textContent = `更新 ${checkResult.result.updated} 条`;
+      document.getElementById('done-added').textContent = 
+        t('popupAddedX', checkResult.result.added.toString());
+      document.getElementById('done-updated').textContent = 
+        t('popupUpdatedX', checkResult.result.updated.toString());
       showView('done');
     } else {
-      document.getElementById('error-msg').textContent = checkResult.error || '同步失败';
+      document.getElementById('error-msg').textContent = checkResult.error || t('popupSyncFailed');
       showView('error');
     }
   } catch (err) {
-    document.getElementById('error-msg').textContent = err.message || '未知错误，请检查飞书配置';
+    document.getElementById('error-msg').textContent = err.message || t('popupUnknownError');
     showView('error');
   }
 });
@@ -159,7 +166,7 @@ async function waitForSyncComplete(timeoutMs) {
   }
   
   // 超时
-  return { success: false, error: '同步超时，请稍后查看结果' };
+  return { success: false, error: t('popupSyncTimeout') };
 }
 
 // 返回
@@ -177,10 +184,10 @@ document.getElementById('btn-retry').addEventListener('click', () => {
 function formatTime(date) {
   const now = new Date();
   const diff = now - date;
-  if (diff < 60_000) return '刚刚';
-  if (diff < 3_600_000) return `${Math.floor(diff / 60_000)} 分钟前`;
-  if (diff < 86_400_000) return `今天 ${pad(date.getHours())}:${pad(date.getMinutes())}`;
-  return `${date.getMonth() + 1}月${date.getDate()}日 ${pad(date.getHours())}:${pad(date.getMinutes())}`;
+  if (diff < 60_000) return t('timeJustNow');
+  if (diff < 3_600_000) return t('timeMinutesAgo', Math.floor(diff / 60_000).toString());
+  if (diff < 86_400_000) return t('timeToday', `${pad(date.getHours())}:${pad(date.getMinutes())}`);
+  return t('timeDate', `${date.getMonth() + 1}/${date.getDate()} ${pad(date.getHours())}:${pad(date.getMinutes())}`);
 }
 
 function pad(n) {

@@ -4,5 +4,320 @@
   },
   "extensionDescription": {
     "message": "Two-way sync between your browser bookmarks and a Lark (Feishu) spreadsheet."
+  },
+  "extTitle": {
+    "message": "Qingniao - Bookmark Sync"
+  },
+  "popupNotConnected": {
+    "message": "Not connected to Feishu"
+  },
+  "popupNotConnectedDesc": {
+    "message": "Please configure Feishu account and spreadsheet in settings"
+  },
+  "popupGoToSettings": {
+    "message": "Go to Settings"
+  },
+  "popupConnected": {
+    "message": "Connected to Feishu"
+  },
+  "popupLocalBookmarks": {
+    "message": "Local Bookmarks"
+  },
+  "popupFeishuSpreadsheet": {
+    "message": "Feishu Spreadsheet"
+  },
+  "popupSyncNow": {
+    "message": "Sync Now"
+  },
+  "popupNeverSynced": {
+    "message": "Never synced"
+  },
+  "popupSyncing": {
+    "message": "Syncing..."
+  },
+  "popupSyncingBookmarks": {
+    "message": "Syncing bookmarks..."
+  },
+  "popupSyncComplete": {
+    "message": "Sync Complete"
+  },
+  "popupAddedX": {
+    "message": "$1 added"
+  },
+  "popupUpdatedX": {
+    "message": "$1 updated"
+  },
+  "popupBack": {
+    "message": "Back"
+  },
+  "popupSyncFailed": {
+    "message": "Sync Failed"
+  },
+  "popupRetry": {
+    "message": "Retry"
+  },
+  "popupSettingsTitle": {
+    "message": "Settings"
+  },
+  "optionsTitle": {
+    "message": "Qingniao Settings"
+  },
+  "optionsSubtitle": {
+    "message": "Configure Feishu account and sync rules"
+  },
+  "optionsFeishuConfig": {
+    "message": "Feishu Configuration"
+  },
+  "optionsStep1": {
+    "message": "Step 1: Fill in Feishu app credentials"
+  },
+  "optionsStep1Desc": {
+    "message": "→ Go to Open Platform"
+  },
+  "optionsAppId": {
+    "message": "App ID"
+  },
+  "optionsAppIdPlaceholder": {
+    "message": "cli_xxxxxxxxxxxxxxxx"
+  },
+  "optionsAppSecret": {
+    "message": "App Secret"
+  },
+  "optionsAppSecretPlaceholder": {
+    "message": "••••••••••••••••"
+  },
+  "optionsRedirectUrl": {
+    "message": "Redirect URL"
+  },
+  "optionsRedirectUrlHint": {
+    "message": "Add this URL to Feishu Open Platform → Security → Redirect URL:"
+  },
+  "optionsStep2": {
+    "message": "Step 2: Connect Feishu account"
+  },
+  "optionsNotConnected": {
+    "message": "Not connected"
+  },
+  "optionsConnected": {
+    "message": "Connected"
+  },
+  "optionsConnectFeishu": {
+    "message": "Connect Feishu Account"
+  },
+  "optionsAuthExpiresHint": {
+    "message": "Authorization expires in 30 days, click to reconnect when expired."
+  },
+  "optionsStep3": {
+    "message": "Step 3: Configure spreadsheet"
+  },
+  "optionsSpreadsheetUrl": {
+    "message": "Spreadsheet URL"
+  },
+  "optionsSpreadsheetUrlPlaceholder": {
+    "message": "https://xxx.feishu.cn/base/xxxxxx?table=tblxxxxxx"
+  },
+  "optionsCreateSpreadsheet": {
+    "message": "→ Create new spreadsheet"
+  },
+  "optionsSpreadsheetUrlHint": {
+    "message": "Create a spreadsheet first, then paste the URL."
+  },
+  "optionsConfiguredSpreadsheet": {
+    "message": "Configured Spreadsheet"
+  },
+  "optionsEdit": {
+    "message": "Edit"
+  },
+  "optionsVerifyConnection": {
+    "message": "Verify Connection"
+  },
+  "optionsFieldGuide": {
+    "message": "View Spreadsheet Field Guide"
+  },
+  "optionsFieldGuideDesc": {
+    "message": "Fields are auto-created when verifying. If failed, create manually:"
+  },
+  "optionsFieldName": {
+    "message": "Field Name"
+  },
+  "optionsFieldType": {
+    "message": "Type"
+  },
+  "optionsFieldTitle": {
+    "message": "Title"
+  },
+  "optionsFieldUrl": {
+    "message": "URL"
+  },
+  "optionsFieldFolderPath": {
+    "message": "Folder Path"
+  },
+  "optionsFieldCreatedAt": {
+    "message": "Created At"
+  },
+  "optionsFieldLastModified": {
+    "message": "Last Modified"
+  },
+  "optionsFieldSourceBrowser": {
+    "message": "Source Browser"
+  },
+  "optionsFieldBrowserId": {
+    "message": "Browser ID"
+  },
+  "optionsFieldSyncStatus": {
+    "message": "Sync Status"
+  },
+  "optionsFieldTypeText": {
+    "message": "Text"
+  },
+  "optionsFieldTypeHyperlink": {
+    "message": "Hyperlink"
+  },
+  "optionsFieldTypeNumber": {
+    "message": "Number"
+  },
+  "optionsFieldTypeSelect": {
+    "message": "Select"
+  },
+  "optionsSyncSettings": {
+    "message": "Sync Settings"
+  },
+  "optionsConflictStrategy": {
+    "message": "Conflict Resolution"
+  },
+  "optionsNewerWins": {
+    "message": "Use newer version (recommended)"
+  },
+  "optionsLocalWins": {
+    "message": "Always use local bookmarks"
+  },
+  "optionsFeishuWins": {
+    "message": "Always use Feishu spreadsheet"
+  },
+  "optionsDangerousOps": {
+    "message": "Dangerous Operations"
+  },
+  "optionsDangerousOpsDesc": {
+    "message": "These actions cannot be undone. Please proceed with caution."
+  },
+  "optionsResetAndSync": {
+    "message": "Clear spreadsheet and full sync"
+  },
+  "optionsSaveSettings": {
+    "message": "Save Settings"
+  },
+  "optionsSaving": {
+    "message": "Saving..."
+  },
+  "optionsSaved": {
+    "message": "Saved"
+  },
+  "notifySyncCompleteTitle": {
+    "message": "Qingniao - Sync Complete"
+  },
+  "notifySyncCompleteBody": {
+    "message": "Added $1, updated $2 bookmarks"
+  },
+  "notifySyncErrorTitle": {
+    "message": "Qingniao - Sync Error"
+  },
+  "notifySyncErrorBody": {
+    "message": "Error during sync, please check settings"
+  },
+  "popupLastSync": {
+    "message": "Last sync: $1"
+  },
+  "popupSyncStartFailed": {
+    "message": "Failed to start sync"
+  },
+  "popupUnknownError": {
+    "message": "Unknown error, please check Feishu settings"
+  },
+  "popupSyncTimeout": {
+    "message": "Sync timeout, please check result later"
+  },
+  "timeJustNow": {
+    "message": "Just now"
+  },
+  "timeMinutesAgo": {
+    "message": "$1 minutes ago"
+  },
+  "timeToday": {
+    "message": "Today $1"
+  },
+  "timeDate": {
+    "message": "$1"
+  },
+  "optionsConnectedWithExpiry": {
+    "message": "✓ Connected (expires $1)"
+  },
+  "optionsAuthFillRequired": {
+    "message": "Please fill in App ID and App Secret"
+  },
+  "optionsAuthConnecting": {
+    "message": "Connecting..."
+  },
+  "optionsAuthWaiting": {
+    "message": "Waiting for authorization..."
+  },
+  "optionsAuthDenied": {
+    "message": "Authorization denied: $1"
+  },
+  "optionsAuthNoCode": {
+    "message": "No authorization code received"
+  },
+  "optionsAuthGettingToken": {
+    "message": "Getting token..."
+  },
+  "optionsVerifying": {
+    "message": "Verifying connection..."
+  },
+  "optionsUrlRequired": {
+    "message": "Please enter spreadsheet URL"
+  },
+  "optionsCheckingPermission": {
+    "message": "Checking spreadsheet access..."
+  },
+  "optionsCheckingFields": {
+    "message": "Checking fields and cleaning sample data..."
+  },
+  "optionsRemovedEmpty": {
+    "message": "Removed $1 sample records"
+  },
+  "optionsPrimaryRenamed": {
+    "message": "Renamed first column to 'Title'"
+  },
+  "optionsFieldsCreated": {
+    "message": "Auto-created $1 fields"
+  },
+  "optionsAllFieldsReady": {
+    "message": "All fields are ready"
+  },
+  "optionsFieldsNeedManual": {
+    "message": "Fields need manual creation: $1"
+  },
+  "optionsConnectPartialSuccess": {
+    "message": "Connected, but some fields need manual creation"
+  },
+  "optionsConnectSuccess": {
+    "message": "Connection successful"
+  },
+  "optionsConnectFailed": {
+    "message": "Connection failed"
+  },
+  "optionsFillRequired": {
+    "message": "Please fill in all required fields"
+  },
+  "optionsResetConfirm": {
+    "message": "This will clear all bookmarks in Feishu spreadsheet and re-import from browser.\n\nContinue?"
+  },
+  "optionsResetting": {
+    "message": "Executing..."
+  },
+  "optionsResetSuccess": {
+    "message": "Full sync complete! Imported $1 bookmarks."
+  },
+  "optionsResetFailed": {
+    "message": "Operation failed: $1"
   }
 }

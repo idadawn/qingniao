@@ -25,7 +25,7 @@
       "48": "assets/icons/icon48.png",
       "128": "assets/icons/icon128.png"
     },
-    "default_title": "青鸟 - 书签同步助手"
+    "default_title": "__MSG_extTitle__"
   },
   "options_ui": {
     "page": "options/options.html",

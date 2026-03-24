@@ -4,5 +4,320 @@
   },
   "extensionDescription": {
     "message": "将浏览器书签与飞书多维表格双向同步，让你的知识永远触手可及。"
+  },
+  "extTitle": {
+    "message": "青鸟 - 书签同步助手"
+  },
+  "popupNotConnected": {
+    "message": "尚未连接飞书"
+  },
+  "popupNotConnectedDesc": {
+    "message": "请先在设置页面配置飞书账号和多维表格"
+  },
+  "popupGoToSettings": {
+    "message": "前往设置"
+  },
+  "popupConnected": {
+    "message": "已连接飞书"
+  },
+  "popupLocalBookmarks": {
+    "message": "本地书签"
+  },
+  "popupFeishuSpreadsheet": {
+    "message": "飞书表格"
+  },
+  "popupSyncNow": {
+    "message": "立即同步"
+  },
+  "popupNeverSynced": {
+    "message": "从未同步"
+  },
+  "popupSyncing": {
+    "message": "正在同步..."
+  },
+  "popupSyncingBookmarks": {
+    "message": "正在同步书签..."
+  },
+  "popupSyncComplete": {
+    "message": "同步完成"
+  },
+  "popupAddedX": {
+    "message": "新增 $1 条"
+  },
+  "popupUpdatedX": {
+    "message": "更新 $1 条"
+  },
+  "popupBack": {
+    "message": "返回"
+  },
+  "popupSyncFailed": {
+    "message": "同步失败"
+  },
+  "popupRetry": {
+    "message": "重试"
+  },
+  "popupSettingsTitle": {
+    "message": "设置"
+  },
+  "optionsTitle": {
+    "message": "青鸟设置"
+  },
+  "optionsSubtitle": {
+    "message": "配置飞书账号与同步规则"
+  },
+  "optionsFeishuConfig": {
+    "message": "飞书配置"
+  },
+  "optionsStep1": {
+    "message": "第一步：填写飞书应用凭证"
+  },
+  "optionsStep1Desc": {
+    "message": "→ 前往开放平台"
+  },
+  "optionsAppId": {
+    "message": "App ID"
+  },
+  "optionsAppIdPlaceholder": {
+    "message": "cli_xxxxxxxxxxxxxxxx"
+  },
+  "optionsAppSecret": {
+    "message": "App Secret"
+  },
+  "optionsAppSecretPlaceholder": {
+    "message": "••••••••••••••••"
+  },
+  "optionsRedirectUrl": {
+    "message": "重定向 URL"
+  },
+  "optionsRedirectUrlHint": {
+    "message": "请将以下地址添加到飞书开放平台 → 安全设置 → 重定向 URL："
+  },
+  "optionsStep2": {
+    "message": "第二步：连接飞书账号"
+  },
+  "optionsNotConnected": {
+    "message": "未连接"
+  },
+  "optionsConnected": {
+    "message": "已连接"
+  },
+  "optionsConnectFeishu": {
+    "message": "连接飞书账号"
+  },
+  "optionsAuthExpiresHint": {
+    "message": "授权有效期 30 天，到期后点击按钮重新连接即可。"
+  },
+  "optionsStep3": {
+    "message": "第三步：配置多维表格"
+  },
+  "optionsSpreadsheetUrl": {
+    "message": "多维表格 URL"
+  },
+  "optionsSpreadsheetUrlPlaceholder": {
+    "message": "https://xxx.feishu.cn/base/xxxxxx?table=tblxxxxxx"
+  },
+  "optionsCreateSpreadsheet": {
+    "message": "→ 创建新表格"
+  },
+  "optionsSpreadsheetUrlHint": {
+    "message": "请先在飞书创建一个多维表格，然后粘贴表格 URL。"
+  },
+  "optionsConfiguredSpreadsheet": {
+    "message": "已配置的多维表格"
+  },
+  "optionsEdit": {
+    "message": "修改"
+  },
+  "optionsVerifyConnection": {
+    "message": "验证连接"
+  },
+  "optionsFieldGuide": {
+    "message": "查看多维表格字段说明"
+  },
+  "optionsFieldGuideDesc": {
+    "message": "验证连接时会自动创建所需字段。若自动创建失败，请手动按以下结构创建："
+  },
+  "optionsFieldName": {
+    "message": "字段名"
+  },
+  "optionsFieldType": {
+    "message": "类型"
+  },
+  "optionsFieldTitle": {
+    "message": "标题"
+  },
+  "optionsFieldUrl": {
+    "message": "URL"
+  },
+  "optionsFieldFolderPath": {
+    "message": "文件夹路径"
+  },
+  "optionsFieldCreatedAt": {
+    "message": "创建时间"
+  },
+  "optionsFieldLastModified": {
+    "message": "最后修改时间"
+  },
+  "optionsFieldSourceBrowser": {
+    "message": "来源浏览器"
+  },
+  "optionsFieldBrowserId": {
+    "message": "浏览器内部ID"
+  },
+  "optionsFieldSyncStatus": {
+    "message": "同步状态"
+  },
+  "optionsFieldTypeText": {
+    "message": "文本"
+  },
+  "optionsFieldTypeHyperlink": {
+    "message": "超链接"
+  },
+  "optionsFieldTypeNumber": {
+    "message": "数字"
+  },
+  "optionsFieldTypeSelect": {
+    "message": "单选"
+  },
+  "optionsSyncSettings": {
+    "message": "同步设置"
+  },
+  "optionsConflictStrategy": {
+    "message": "冲突处理策略"
+  },
+  "optionsNewerWins": {
+    "message": "以最后修改时间较新者为准（推荐）"
+  },
+  "optionsLocalWins": {
+    "message": "始终以本地书签为准"
+  },
+  "optionsFeishuWins": {
+    "message": "始终以飞书表格为准"
+  },
+  "optionsDangerousOps": {
+    "message": "危险操作"
+  },
+  "optionsDangerousOpsDesc": {
+    "message": "以下操作不可撤销，请谨慎执行。"
+  },
+  "optionsResetAndSync": {
+    "message": "清空飞书表格并重新全量同步"
+  },
+  "optionsSaveSettings": {
+    "message": "保存设置"
+  },
+  "optionsSaving": {
+    "message": "保存中..."
+  },
+  "optionsSaved": {
+    "message": "已保存"
+  },
+  "notifySyncCompleteTitle": {
+    "message": "青鸟 - 同步完成"
+  },
+  "notifySyncCompleteBody": {
+    "message": "新增 $1 条，更新 $2 条书签"
+  },
+  "notifySyncErrorTitle": {
+    "message": "青鸟 - 同步失败"
+  },
+  "notifySyncErrorBody": {
+    "message": "同步过程中出现错误，请检查设置"
+  },
+  "popupLastSync": {
+    "message": "上次同步：$1"
+  },
+  "popupSyncStartFailed": {
+    "message": "同步启动失败"
+  },
+  "popupUnknownError": {
+    "message": "未知错误，请检查飞书配置"
+  },
+  "popupSyncTimeout": {
+    "message": "同步超时，请稍后查看结果"
+  },
+  "timeJustNow": {
+    "message": "刚刚"
+  },
+  "timeMinutesAgo": {
+    "message": "$1 分钟前"
+  },
+  "timeToday": {
+    "message": "今天 $1"
+  },
+  "timeDate": {
+    "message": "$1"
+  },
+  "optionsConnectedWithExpiry": {
+    "message": "✓ 已连接（有效期至 $1）"
+  },
+  "optionsAuthFillRequired": {
+    "message": "请先填写 App ID 和 App Secret"
+  },
+  "optionsAuthConnecting": {
+    "message": "连接中..."
+  },
+  "optionsAuthWaiting": {
+    "message": "等待授权..."
+  },
+  "optionsAuthDenied": {
+    "message": "授权被拒绝: $1"
+  },
+  "optionsAuthNoCode": {
+    "message": "未获取到授权码"
+  },
+  "optionsAuthGettingToken": {
+    "message": "正在获取令牌..."
+  },
+  "optionsVerifying": {
+    "message": "验证连接中..."
+  },
+  "optionsUrlRequired": {
+    "message": "请填写多维表格 URL"
+  },
+  "optionsCheckingPermission": {
+    "message": "验证表格访问权限..."
+  },
+  "optionsCheckingFields": {
+    "message": "检查字段并清理示例数据..."
+  },
+  "optionsRemovedEmpty": {
+    "message": "已删除 $1 条示例数据"
+  },
+  "optionsPrimaryRenamed": {
+    "message": "已将第一列改名为「标题」"
+  },
+  "optionsFieldsCreated": {
+    "message": "已自动创建 $1 个字段"
+  },
+  "optionsAllFieldsReady": {
+    "message": "所有字段已就绪"
+  },
+  "optionsFieldsNeedManual": {
+    "message": "以下字段需手动添加：$1"
+  },
+  "optionsConnectPartialSuccess": {
+    "message": "连接成功，但部分字段需要手动添加"
+  },
+  "optionsConnectSuccess": {
+    "message": "连接成功"
+  },
+  "optionsConnectFailed": {
+    "message": "连接失败"
+  },
+  "optionsFillRequired": {
+    "message": "请填写所有必填项"
+  },
+  "optionsResetConfirm": {
+    "message": "此操作将清空飞书多维表格中的所有书签记录，并重新从浏览器全量导入。\n\n确定要继续吗？"
+  },
+  "optionsResetting": {
+    "message": "正在执行..."
+  },
+  "optionsResetSuccess": {
+    "message": "全量同步完成！共导入 $1 条书签。"
+  },
+  "optionsResetFailed": {
+    "message": "操作失败：$1"
   }
 }

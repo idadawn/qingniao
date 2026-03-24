@@ -1,0 +1,45 @@
+{
+  "manifest_version": 3,
+  "name": "青鸟 - 书签同步助手",
+  "version": "0.1.0",
+  "description": "将浏览器书签与飞书多维表格双向同步，让你的知识永远触手可及。",
+  "permissions": [
+    "bookmarks",
+    "storage",
+    "identity",
+    "notifications"
+  ],
+  "host_permissions": [
+    "https://open.feishu.cn/*"
+  ],
+  "background": {
+    "service_worker": "background/background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "assets/icons/icon16.png",
+      "32": "assets/icons/icon32.png",
+      "48": "assets/icons/icon48.png",
+      "128": "assets/icons/icon128.png"
+    },
+    "default_title": "青鸟 - 书签同步助手"
+  },
+  "options_ui": {
+    "page": "options/options.html",
+    "open_in_tab": true
+  },
+  "icons": {
+    "16": "assets/icons/icon16.png",
+    "32": "assets/icons/icon32.png",
+    "48": "assets/icons/icon48.png",
+    "128": "assets/icons/icon128.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["assets/icons/*.png"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

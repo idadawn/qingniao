@@ -1,0 +1,11 @@
+{
+  "name": "qingniao",
+  "version": "0.1.0",
+  "description": "青鸟 - 浏览器书签与飞书多维表格双向同步扩展",
+  "scripts": {
+    "build": "echo 'Build script to be implemented'",
+    "pack": "zip -r qingniao-extension.zip src/"
+  },
+  "author": "",
+  "license": "MIT"
+}

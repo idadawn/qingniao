@@ -1,0 +1,288 @@
+/* 青鸟 Popup 样式 */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 320px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', sans-serif;
+  font-size: 14px;
+  color: #1f2329;
+  background: #fff;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ─── 头部 ─────────────────────────────────────────────────── */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px 12px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo {
+  width: 20px;
+  height: 20px;
+}
+
+.title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1f2329;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #8f959e;
+  padding: 4px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  transition: background 0.15s, color 0.15s;
+}
+
+.icon-btn:hover {
+  background: #f5f6f7;
+  color: #3370ff;
+}
+
+/* ─── 视图切换 ─────────────────────────────────────────────── */
+.view {
+  padding: 20px 16px;
+}
+
+.hidden {
+  display: none;
+}
+
+/* ─── 未连接状态 ───────────────────────────────────────────── */
+.empty-state {
+  text-align: center;
+  padding: 8px 0;
+}
+
+.empty-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1f2329;
+  margin-bottom: 6px;
+}
+
+.empty-desc {
+  font-size: 13px;
+  color: #8f959e;
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+/* ─── 已连接状态 ───────────────────────────────────────────── */
+.status-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #d9d9d9;
+}
+
+.status-dot.connected {
+  background: #34c759;
+}
+
+.status-text {
+  font-size: 13px;
+  color: #8f959e;
+}
+
+.stats {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  background: #f7f8fa;
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.stat-num {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1f2329;
+}
+
+.stat-label {
+  font-size: 12px;
+  color: #8f959e;
+}
+
+.stat-divider {
+  font-size: 18px;
+  color: #3370ff;
+  font-weight: 300;
+}
+
+.btn-sync {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.last-sync {
+  text-align: center;
+  font-size: 12px;
+  color: #bbbfc4;
+}
+
+/* ─── 同步中状态 ───────────────────────────────────────────── */
+.syncing-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 0;
+}
+
+.spinner {
+  width: 32px;
+  height: 32px;
+  border: 3px solid #e8eaed;
+  border-top-color: #3370ff;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.syncing-text {
+  font-size: 14px;
+  color: #646a73;
+}
+
+/* ─── 完成状态 ─────────────────────────────────────────────── */
+.done-state, .error-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 0;
+}
+
+.done-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #e8f7ee;
+  color: #34c759;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.done-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1f2329;
+}
+
+.done-stats {
+  display: flex;
+  gap: 12px;
+  font-size: 13px;
+  color: #646a73;
+  margin-bottom: 8px;
+}
+
+/* ─── 错误状态 ─────────────────────────────────────────────── */
+.error-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #fff0f0;
+  color: #f54a45;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.error-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1f2329;
+}
+
+.error-msg {
+  font-size: 13px;
+  color: #8f959e;
+  text-align: center;
+  line-height: 1.5;
+  margin-bottom: 8px;
+}
+
+/* ─── 按钮 ─────────────────────────────────────────────────── */
+.btn {
+  padding: 9px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  transition: opacity 0.15s, background 0.15s;
+}
+
+.btn:active {
+  opacity: 0.85;
+}
+
+.btn-primary {
+  background: #3370ff;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: #2860e1;
+}
+
+.btn-secondary {
+  background: #f5f6f7;
+  color: #1f2329;
+}
+
+.btn-secondary:hover {
+  background: #e8eaed;
+}

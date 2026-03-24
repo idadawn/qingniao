@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>青鸟</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="container">
+    <!-- 头部 -->
+    <header class="header">
+      <div class="header-left">
+        <img src="../assets/icons/icon32.png" alt="青鸟" class="logo" />
+        <span class="title">青鸟</span>
+      </div>
+      <button class="icon-btn" id="btn-settings" title="设置">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="3"></circle>
+          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+        </svg>
+      </button>
+    </header>
+
+    <!-- 未连接状态 -->
+    <div class="view" id="view-disconnected">
+      <div class="empty-state">
+        <p class="empty-title">尚未连接飞书</p>
+        <p class="empty-desc">请先在设置页面配置飞书账号和多维表格</p>
+        <button class="btn btn-primary" id="btn-go-settings">前往设置</button>
+      </div>
+    </div>
+
+    <!-- 已连接状态 -->
+    <div class="view hidden" id="view-connected">
+      <div class="status-bar">
+        <span class="status-dot connected"></span>
+        <span class="status-text">已连接飞书</span>
+      </div>
+      <div class="stats">
+        <div class="stat-item">
+          <span class="stat-num" id="local-count">—</span>
+          <span class="stat-label">本地书签</span>
+        </div>
+        <div class="stat-divider">↔</div>
+        <div class="stat-item">
+          <span class="stat-num" id="feishu-count">—</span>
+          <span class="stat-label">飞书表格</span>
+        </div>
+      </div>
+      <button class="btn btn-primary btn-sync" id="btn-sync">立即同步</button>
+      <p class="last-sync" id="last-sync-time">从未同步</p>
+    </div>
+
+    <!-- 同步中状态 -->
+    <div class="view hidden" id="view-syncing">
+      <div class="syncing-state">
+        <div class="spinner"></div>
+        <p class="syncing-text">正在同步书签...</p>
+      </div>
+    </div>
+
+    <!-- 同步完成状态 -->
+    <div class="view hidden" id="view-done">
+      <div class="done-state">
+        <div class="done-icon">✓</div>
+        <p class="done-title">同步完成</p>
+        <div class="done-stats">
+          <span id="done-added">新增 0 条</span>
+          <span id="done-updated">更新 0 条</span>
+        </div>
+        <button class="btn btn-secondary" id="btn-back">返回</button>
+      </div>
+    </div>
+
+    <!-- 错误状态 -->
+    <div class="view hidden" id="view-error">
+      <div class="error-state">
+        <div class="error-icon">✕</div>
+        <p class="error-title">同步失败</p>
+        <p class="error-msg" id="error-msg"></p>
+        <button class="btn btn-secondary" id="btn-retry">重试</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="popup.js"></script>
+</body>
+</html>

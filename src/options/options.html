@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>青鸟 - 设置</title>
+  <link rel="stylesheet" href="options.css" />
+</head>
+<body>
+  <div class="page">
+    <header class="page-header">
+      <img src="../assets/icons/icon48.png" alt="青鸟" class="page-logo" />
+      <div>
+        <h1 class="page-title">青鸟设置</h1>
+        <p class="page-subtitle">配置飞书账号与同步规则</p>
+      </div>
+    </header>
+
+    <main class="page-main">
+
+      <!-- 飞书配置 -->
+      <section class="card">
+        <h2 class="card-title">飞书配置</h2>
+
+        <!-- 第一步：App 凭证 -->
+        <div class="step-group">
+          <div class="step-label">
+            第一步：填写飞书应用凭证
+            <a href="https://open.feishu.cn/app" target="_blank" class="step-link">→ 前往开放平台</a>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="app-id">App ID</label>
+            <input class="form-input" type="text" id="app-id" placeholder="cli_xxxxxxxxxxxxxxxx" />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="app-secret">App Secret</label>
+            <input class="form-input" type="password" id="app-secret" placeholder="••••••••••••••••" />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">重定向 URL</label>
+            <p class="form-hint">请将以下地址添加到飞书开放平台 → 安全设置 → 重定向 URL：</p>
+            <code id="redirect-uri" class="redirect-uri"></code>
+          </div>
+        </div>
+
+        <!-- 第二步：连接账号 -->
+        <div class="step-group">
+          <div class="step-label">第二步：连接飞书账号</div>
+          <div class="auth-status-row">
+            <span id="auth-status" class="auth-status">未连接</span>
+          </div>
+          <button class="btn btn-secondary" id="btn-authorize">连接飞书账号</button>
+          <p class="form-hint">授权有效期 30 天，到期后点击按钮重新连接即可。</p>
+        </div>
+
+        <!-- 第三步：多维表格 -->
+        <div class="step-group">
+          <div class="step-label">第三步：配置多维表格</div>
+
+          <div class="form-group" id="table-url-input-group">
+            <label class="form-label" for="table-url">
+              多维表格 URL
+              <a href="https://my.feishu.cn/base" target="_blank" class="step-link">→ 创建新表格</a>
+            </label>
+            <input
+              class="form-input"
+              type="url"
+              id="table-url"
+              placeholder="https://xxx.feishu.cn/base/xxxxxx?table=tblxxxxxx"
+            />
+            <p class="form-hint">请先在飞书创建一个多维表格，然后粘贴表格 URL。</p>
+          </div>
+          
+          <div class="form-group hidden" id="table-url-display-group">
+            <label class="form-label">已配置的多维表格</label>
+            <div class="table-url-display">
+              <a id="table-url-link" href="#" target="_blank" class="table-url-text"></a>
+              <button class="btn btn-text" id="btn-edit-table-url">修改</button>
+            </div>
+          </div>
+
+          <div class="btn-row" id="btn-verify-row">
+            <button class="btn btn-primary" id="btn-verify">验证连接</button>
+            <span class="verify-status" id="verify-status"></span>
+          </div>
+          <div class="verify-result hidden" id="verify-result"></div>
+        </div>
+
+        <!-- 字段指引（折叠） -->
+        <details class="setup-guide">
+          <summary>查看多维表格字段说明</summary>
+          <p>验证连接时会自动创建所需字段。若自动创建失败，请手动按以下结构创建：</p>
+          <table class="field-table">
+            <thead><tr><th>字段名</th><th>类型</th></tr></thead>
+            <tbody>
+              <tr><td>标题</td><td>文本（默认第一列）</td></tr>
+              <tr><td>URL</td><td>超链接</td></tr>
+              <tr><td>文件夹路径</td><td>文本</td></tr>
+              <tr><td>创建时间</td><td>数字</td></tr>
+              <tr><td>最后修改时间</td><td>数字</td></tr>
+              <tr><td>来源浏览器</td><td>单选</td></tr>
+              <tr><td>浏览器内部ID</td><td>文本</td></tr>
+              <tr><td>同步状态</td><td>单选</td></tr>
+            </tbody>
+          </table>
+        </details>
+      </section>
+
+      <!-- 同步设置 -->
+      <section class="card">
+        <h2 class="card-title">同步设置</h2>
+
+        <div class="form-group">
+          <label class="form-label">冲突处理策略</label>
+          <div class="radio-group">
+            <label class="radio-item">
+              <input type="radio" name="conflict" value="newer" checked />
+              <span>以最后修改时间较新者为准（推荐）</span>
+            </label>
+            <label class="radio-item">
+              <input type="radio" name="conflict" value="local" />
+              <span>始终以本地书签为准</span>
+            </label>
+            <label class="radio-item">
+              <input type="radio" name="conflict" value="feishu" />
+              <span>始终以飞书表格为准</span>
+            </label>
+          </div>
+        </div>
+      </section>
+
+      <!-- 危险操作 -->
+      <section class="card card-danger">
+        <h2 class="card-title danger-title">危险操作</h2>
+        <p class="card-desc">以下操作不可撤销，请谨慎执行。</p>
+        <button class="btn btn-danger" id="btn-reset-sync">
+          清空飞书表格并重新全量同步
+        </button>
+      </section>
+
+      <!-- 保存按钮 -->
+      <div class="save-bar">
+        <button class="btn btn-primary btn-save" id="btn-save">保存设置</button>
+        <span class="save-status" id="save-status"></span>
+      </div>
+
+    </main>
+  </div>
+
+  <script type="module" src="options.js"></script>
+</body>
+</html>
